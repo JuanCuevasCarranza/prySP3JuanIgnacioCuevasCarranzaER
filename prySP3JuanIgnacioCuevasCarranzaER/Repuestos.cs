@@ -10,7 +10,7 @@ namespace prySP3JuanIgnacioCuevasCarranzaER
 {
     public partial class frmRepuestos : Form
     {
-       
+
         public frmRepuestos()
         {
             InitializeComponent();
@@ -37,6 +37,11 @@ namespace prySP3JuanIgnacioCuevasCarranzaER
         }
 
         private void txtPrecio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
         {
 
         }
