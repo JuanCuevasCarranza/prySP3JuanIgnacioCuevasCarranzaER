@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRepuestos));
             cmbFiltroMarca = new ComboBox();
             tcRegistro = new TabControl();
             tpRegistro = new TabPage();
@@ -305,6 +306,7 @@
             ClientSize = new Size(308, 352);
             Controls.Add(tcRegistro);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmRepuestos";
