@@ -28,40 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            comboBox1 = new ComboBox();
+            cmbFiltroMarca = new ComboBox();
             tcRegistro = new TabControl();
             tpRegistro = new TabPage();
-            button1 = new Button();
-            label1 = new Label();
+            btnRegistrar = new Button();
+            lblMarca = new Label();
             panel1 = new Panel();
-            numericUpDown1 = new NumericUpDown();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            groupBox1 = new GroupBox();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
-            comboBox2 = new ComboBox();
+            nudPrecio = new NumericUpDown();
+            lblPrecio = new Label();
+            lblDescripcion = new Label();
+            lblNumero = new Label();
+            txtDescripcion = new TextBox();
+            txtNumero = new TextBox();
+            gbxOrige = new GroupBox();
+            rbImportado = new RadioButton();
+            rbNacional = new RadioButton();
+            cmbMarca = new ComboBox();
             tpConsulta = new TabPage();
+            btnAceptar = new Button();
+            lbResultado = new ListBox();
+            gbFiltroOrigen = new GroupBox();
+            rbImportadoFiltro = new RadioButton();
+            rbNacionalFiltro = new RadioButton();
+            lblMarcaFiltro = new Label();
             tcRegistro.SuspendLayout();
             tpRegistro.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
-            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nudPrecio).BeginInit();
+            gbxOrige.SuspendLayout();
             tpConsulta.SuspendLayout();
+            gbFiltroOrigen.SuspendLayout();
             SuspendLayout();
             // 
-            // comboBox1
+            // cmbFiltroMarca
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "(P) - Peugeot", "(F) - Fiat", "(R) - Renault" });
-            comboBox1.Location = new Point(6, 6);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 0;
+            cmbFiltroMarca.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbFiltroMarca.FormattingEnabled = true;
+            cmbFiltroMarca.Items.AddRange(new object[] { "(P) - Peugeot", "(F) - Fiat", "(R) - Renault" });
+            cmbFiltroMarca.Location = new Point(6, 27);
+            cmbFiltroMarca.Name = "cmbFiltroMarca";
+            cmbFiltroMarca.Size = new Size(121, 23);
+            cmbFiltroMarca.TabIndex = 0;
             // 
             // tcRegistro
             // 
@@ -75,11 +82,11 @@
             // 
             // tpRegistro
             // 
-            tpRegistro.Controls.Add(button1);
-            tpRegistro.Controls.Add(label1);
+            tpRegistro.Controls.Add(btnRegistrar);
+            tpRegistro.Controls.Add(lblMarca);
             tpRegistro.Controls.Add(panel1);
-            tpRegistro.Controls.Add(groupBox1);
-            tpRegistro.Controls.Add(comboBox2);
+            tpRegistro.Controls.Add(gbxOrige);
+            tpRegistro.Controls.Add(cmbMarca);
             tpRegistro.Location = new Point(4, 24);
             tpRegistro.Name = "tpRegistro";
             tpRegistro.Padding = new Padding(3);
@@ -89,135 +96,139 @@
             tpRegistro.UseVisualStyleBackColor = true;
             tpRegistro.Click += tabPage1_Click;
             // 
-            // button1
+            // btnRegistrar
             // 
-            button1.Location = new Point(197, 286);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 10;
-            button1.Text = "Registrar";
-            button1.UseVisualStyleBackColor = true;
+            btnRegistrar.Location = new Point(205, 281);
+            btnRegistrar.Name = "btnRegistrar";
+            btnRegistrar.Size = new Size(75, 23);
+            btnRegistrar.TabIndex = 10;
+            btnRegistrar.Text = "Registrar";
+            btnRegistrar.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblMarca
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(19, 23);
-            label1.Name = "label1";
-            label1.Size = new Size(40, 15);
-            label1.TabIndex = 7;
-            label1.Text = "Marca";
+            lblMarca.AutoSize = true;
+            lblMarca.Location = new Point(6, 18);
+            lblMarca.Name = "lblMarca";
+            lblMarca.Size = new Size(40, 15);
+            lblMarca.TabIndex = 7;
+            lblMarca.Text = "Marca";
             // 
             // panel1
             // 
-            panel1.Controls.Add(numericUpDown1);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(textBox2);
-            panel1.Location = new Point(23, 135);
+            panel1.Controls.Add(nudPrecio);
+            panel1.Controls.Add(lblPrecio);
+            panel1.Controls.Add(lblDescripcion);
+            panel1.Controls.Add(lblNumero);
+            panel1.Controls.Add(txtDescripcion);
+            panel1.Controls.Add(txtNumero);
+            panel1.Location = new Point(6, 130);
             panel1.Name = "panel1";
-            panel1.Size = new Size(255, 145);
+            panel1.Size = new Size(274, 145);
             panel1.TabIndex = 9;
             // 
-            // numericUpDown1
+            // nudPrecio
             // 
-            numericUpDown1.DecimalPlaces = 2;
-            numericUpDown1.Location = new Point(86, 99);
-            numericUpDown1.Maximum = new decimal(new int[] { 9999, 0, 0, 0 });
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(120, 23);
-            numericUpDown1.TabIndex = 8;
+            nudPrecio.DecimalPlaces = 2;
+            nudPrecio.Location = new Point(66, 97);
+            nudPrecio.Maximum = new decimal(new int[] { 9999, 0, 0, 0 });
+            nudPrecio.Name = "nudPrecio";
+            nudPrecio.Size = new Size(120, 23);
+            nudPrecio.TabIndex = 8;
             // 
-            // label2
+            // lblPrecio
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(14, 99);
-            label2.Name = "label2";
-            label2.Size = new Size(40, 15);
-            label2.TabIndex = 7;
-            label2.Text = "Precio";
+            lblPrecio.AutoSize = true;
+            lblPrecio.Location = new Point(14, 99);
+            lblPrecio.Name = "lblPrecio";
+            lblPrecio.Size = new Size(40, 15);
+            lblPrecio.TabIndex = 7;
+            lblPrecio.Text = "Precio";
             // 
-            // label3
+            // lblDescripcion
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(11, 58);
-            label3.Name = "label3";
-            label3.Size = new Size(69, 15);
-            label3.TabIndex = 5;
-            label3.Text = "Descripción";
+            lblDescripcion.AutoSize = true;
+            lblDescripcion.Location = new Point(11, 58);
+            lblDescripcion.Name = "lblDescripcion";
+            lblDescripcion.Size = new Size(69, 15);
+            lblDescripcion.TabIndex = 5;
+            lblDescripcion.Text = "Descripción";
             // 
-            // label4
+            // lblNumero
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(14, 17);
-            label4.Name = "label4";
-            label4.Size = new Size(51, 15);
-            label4.TabIndex = 5;
-            label4.Text = "Número";
+            lblNumero.AutoSize = true;
+            lblNumero.Location = new Point(14, 17);
+            lblNumero.Name = "lblNumero";
+            lblNumero.Size = new Size(51, 15);
+            lblNumero.TabIndex = 5;
+            lblNumero.Text = "Número";
             // 
-            // textBox1
+            // txtDescripcion
             // 
-            textBox1.Location = new Point(86, 55);
-            textBox1.MaxLength = 50;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(160, 23);
-            textBox1.TabIndex = 3;
+            txtDescripcion.Location = new Point(86, 55);
+            txtDescripcion.MaxLength = 50;
+            txtDescripcion.Name = "txtDescripcion";
+            txtDescripcion.Size = new Size(180, 23);
+            txtDescripcion.TabIndex = 3;
             // 
-            // textBox2
+            // txtNumero
             // 
-            textBox2.Location = new Point(86, 14);
-            textBox2.MaxLength = 6;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 2;
+            txtNumero.Location = new Point(86, 14);
+            txtNumero.MaxLength = 6;
+            txtNumero.Name = "txtNumero";
+            txtNumero.Size = new Size(100, 23);
+            txtNumero.TabIndex = 2;
             // 
-            // groupBox1
+            // gbxOrige
             // 
-            groupBox1.Controls.Add(radioButton1);
-            groupBox1.Controls.Add(radioButton2);
-            groupBox1.Location = new Point(23, 49);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(142, 80);
-            groupBox1.TabIndex = 8;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Origen";
+            gbxOrige.Controls.Add(rbImportado);
+            gbxOrige.Controls.Add(rbNacional);
+            gbxOrige.Location = new Point(6, 44);
+            gbxOrige.Name = "gbxOrige";
+            gbxOrige.Size = new Size(142, 80);
+            gbxOrige.TabIndex = 8;
+            gbxOrige.TabStop = false;
+            gbxOrige.Text = "Origen";
             // 
-            // radioButton1
+            // rbImportado
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(6, 47);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(95, 19);
-            radioButton1.TabIndex = 3;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "(I) Importado";
-            radioButton1.UseVisualStyleBackColor = true;
+            rbImportado.AutoSize = true;
+            rbImportado.Location = new Point(7, 47);
+            rbImportado.Name = "rbImportado";
+            rbImportado.Size = new Size(95, 19);
+            rbImportado.TabIndex = 3;
+            rbImportado.TabStop = true;
+            rbImportado.Text = "(I) Importado";
+            rbImportado.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbNacional
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(7, 22);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(92, 19);
-            radioButton2.TabIndex = 2;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "(N) Nacional";
-            radioButton2.UseVisualStyleBackColor = true;
+            rbNacional.AutoSize = true;
+            rbNacional.Location = new Point(7, 22);
+            rbNacional.Name = "rbNacional";
+            rbNacional.Size = new Size(92, 19);
+            rbNacional.TabIndex = 2;
+            rbNacional.TabStop = true;
+            rbNacional.Text = "(N) Nacional";
+            rbNacional.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // cmbMarca
             // 
-            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "(P) - Peugeot", "(F) - Fiat", "(R) - Renault" });
-            comboBox2.Location = new Point(63, 20);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(121, 23);
-            comboBox2.TabIndex = 6;
+            cmbMarca.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbMarca.FormattingEnabled = true;
+            cmbMarca.Items.AddRange(new object[] { "(P) - Peugeot", "(F) - Fiat", "(R) - Renault" });
+            cmbMarca.Location = new Point(50, 15);
+            cmbMarca.Name = "cmbMarca";
+            cmbMarca.Size = new Size(121, 23);
+            cmbMarca.TabIndex = 6;
             // 
             // tpConsulta
             // 
-            tpConsulta.Controls.Add(comboBox1);
+            tpConsulta.Controls.Add(btnAceptar);
+            tpConsulta.Controls.Add(lbResultado);
+            tpConsulta.Controls.Add(gbFiltroOrigen);
+            tpConsulta.Controls.Add(lblMarcaFiltro);
+            tpConsulta.Controls.Add(cmbFiltroMarca);
             tpConsulta.Location = new Point(4, 24);
             tpConsulta.Name = "tpConsulta";
             tpConsulta.Padding = new Padding(3);
@@ -226,11 +237,72 @@
             tpConsulta.Text = "Consulta";
             tpConsulta.UseVisualStyleBackColor = true;
             // 
+            // btnAceptar
+            // 
+            btnAceptar.Location = new Point(7, 60);
+            btnAceptar.Name = "btnAceptar";
+            btnAceptar.Size = new Size(75, 23);
+            btnAceptar.TabIndex = 7;
+            btnAceptar.Text = "Aceptar";
+            btnAceptar.UseVisualStyleBackColor = true;
+            // 
+            // lbResultado
+            // 
+            lbResultado.BackColor = SystemColors.ScrollBar;
+            lbResultado.FormattingEnabled = true;
+            lbResultado.Location = new Point(7, 93);
+            lbResultado.Name = "lbResultado";
+            lbResultado.Size = new Size(273, 214);
+            lbResultado.TabIndex = 6;
+            // 
+            // gbFiltroOrigen
+            // 
+            gbFiltroOrigen.Controls.Add(rbImportadoFiltro);
+            gbFiltroOrigen.Controls.Add(rbNacionalFiltro);
+            gbFiltroOrigen.Location = new Point(133, 9);
+            gbFiltroOrigen.Name = "gbFiltroOrigen";
+            gbFiltroOrigen.Size = new Size(147, 74);
+            gbFiltroOrigen.TabIndex = 5;
+            gbFiltroOrigen.TabStop = false;
+            gbFiltroOrigen.Text = "Filtro Origen";
+            gbFiltroOrigen.Enter += groupBox1_Enter_1;
+            // 
+            // rbImportadoFiltro
+            // 
+            rbImportadoFiltro.AutoSize = true;
+            rbImportadoFiltro.Location = new Point(6, 47);
+            rbImportadoFiltro.Name = "rbImportadoFiltro";
+            rbImportadoFiltro.Size = new Size(95, 19);
+            rbImportadoFiltro.TabIndex = 4;
+            rbImportadoFiltro.TabStop = true;
+            rbImportadoFiltro.Text = "(I) Importado";
+            rbImportadoFiltro.UseVisualStyleBackColor = true;
+            // 
+            // rbNacionalFiltro
+            // 
+            rbNacionalFiltro.AutoSize = true;
+            rbNacionalFiltro.Location = new Point(6, 22);
+            rbNacionalFiltro.Name = "rbNacionalFiltro";
+            rbNacionalFiltro.Size = new Size(92, 19);
+            rbNacionalFiltro.TabIndex = 3;
+            rbNacionalFiltro.TabStop = true;
+            rbNacionalFiltro.Text = "(N) Nacional";
+            rbNacionalFiltro.UseVisualStyleBackColor = true;
+            // 
+            // lblMarcaFiltro
+            // 
+            lblMarcaFiltro.AutoSize = true;
+            lblMarcaFiltro.Location = new Point(6, 9);
+            lblMarcaFiltro.Name = "lblMarcaFiltro";
+            lblMarcaFiltro.Size = new Size(70, 15);
+            lblMarcaFiltro.TabIndex = 1;
+            lblMarcaFiltro.Text = "Filtro Marca";
+            // 
             // frmRepuestos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(442, 452);
+            ClientSize = new Size(308, 352);
             Controls.Add(tcRegistro);
             Name = "frmRepuestos";
             Text = "Repuestos";
@@ -240,30 +312,39 @@
             tpRegistro.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nudPrecio).EndInit();
+            gbxOrige.ResumeLayout(false);
+            gbxOrige.PerformLayout();
             tpConsulta.ResumeLayout(false);
+            tpConsulta.PerformLayout();
+            gbFiltroOrigen.ResumeLayout(false);
+            gbFiltroOrigen.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-        private ComboBox comboBox1;
+        private ComboBox cmbFiltroMarca;
         private TabControl tcRegistro;
         private TabPage tpRegistro;
-        private Button button1;
-        private Label label1;
+        private Button btnRegistrar;
+        private Label lblMarca;
         private Panel panel1;
-        private NumericUpDown numericUpDown1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private GroupBox groupBox1;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
-        private ComboBox comboBox2;
+        private NumericUpDown nudPrecio;
+        private Label lblPrecio;
+        private Label lblDescripcion;
+        private Label lblNumero;
+        private TextBox txtDescripcion;
+        private TextBox txtNumero;
+        private GroupBox gbxOrige;
+        private RadioButton rbImportado;
+        private RadioButton rbNacional;
+        private ComboBox cmbMarca;
         private TabPage tpConsulta;
+        private Label lblMarcaFiltro;
+        private GroupBox gbFiltroOrigen;
+        private RadioButton rbImportadoFiltro;
+        private RadioButton rbNacionalFiltro;
+        private ListBox lbResultado;
+        private Button btnAceptar;
     }
 }
