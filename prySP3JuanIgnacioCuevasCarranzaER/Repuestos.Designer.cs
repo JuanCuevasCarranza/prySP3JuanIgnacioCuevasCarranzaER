@@ -77,7 +77,7 @@
             tcRegistro.Location = new Point(12, 12);
             tcRegistro.Name = "tcRegistro";
             tcRegistro.SelectedIndex = 0;
-            tcRegistro.Size = new Size(424, 433);
+            tcRegistro.Size = new Size(296, 341);
             tcRegistro.TabIndex = 2;
             // 
             // tpRegistro
@@ -90,7 +90,7 @@
             tpRegistro.Location = new Point(4, 24);
             tpRegistro.Name = "tpRegistro";
             tpRegistro.Padding = new Padding(3);
-            tpRegistro.Size = new Size(416, 405);
+            tpRegistro.Size = new Size(288, 313);
             tpRegistro.TabIndex = 0;
             tpRegistro.Text = "Registro";
             tpRegistro.UseVisualStyleBackColor = true;
@@ -232,7 +232,7 @@
             tpConsulta.Location = new Point(4, 24);
             tpConsulta.Name = "tpConsulta";
             tpConsulta.Padding = new Padding(3);
-            tpConsulta.Size = new Size(416, 405);
+            tpConsulta.Size = new Size(288, 313);
             tpConsulta.TabIndex = 1;
             tpConsulta.Text = "Consulta";
             tpConsulta.UseVisualStyleBackColor = true;
@@ -304,7 +304,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(308, 352);
             Controls.Add(tcRegistro);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "frmRepuestos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Repuestos";
             Load += Repuestos_Load;
             tcRegistro.ResumeLayout(false);
